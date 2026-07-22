@@ -608,31 +608,102 @@
 
   <div class="projeto-card reveal">
     <div class="projeto-visual">
-      <div class="projeto-icon">🏫</div>
+      <div class="projeto-icon">🌐</div>
     </div>
     <div class="projeto-info">
-      <span class="projeto-tag">Sistema Desktop</span>
-      <h3 class="projeto-titulo">Sistema Hughes — EACE</h3>
+      <span class="projeto-tag">Portal Web · Iniciativa Própria</span>
+      <h3 class="projeto-titulo">Hughes Web</h3>
       <p class="projeto-desc">
-        Sistema de gestão de escolas para o programa EACE da Hughes Network Systems.
-        Substitui um processo manual baseado em planilhas Excel por uma aplicação
-        desktop conectada a um banco de dados em nuvem, acessível por toda a equipe em tempo real.
+        Portal interno para gestão do projeto EACE Aprender Conectado, criado por
+        iniciativa própria e hoje adotado oficialmente pela empresa, substituindo
+        o antigo sistema desktop em VB.NET/WinForms.
       </p>
       <div class="projeto-stack">
-        <span class="stack-tag">VB.NET</span>
-        <span class="stack-tag">Windows Forms</span>
+        <span class="stack-tag">React 19</span>
+        <span class="stack-tag">TypeScript</span>
+        <span class="stack-tag">Vite</span>
+        <span class="stack-tag">TailwindCSS 4</span>
+        <span class="stack-tag">shadcn/ui</span>
         <span class="stack-tag">Supabase</span>
-        <span class="stack-tag">REST API</span>
-        <span class="stack-tag">Python</span>
-        <span class="stack-tag">PostgreSQL</span>
       </div>
       <ul class="projeto-features">
-        <li>Consulta de escolas por código INEP com retorno em tempo real</li>
-        <li>Edição de responsáveis, telefones, provedor e coordenadas GPS</li>
-        <li>Integração direta com WhatsApp e Google Maps</li>
-        <li>Banco de dados em nuvem com Row Level Security (RLS)</li>
-        <li>Migração automatizada de dados via script Python</li>
-        <li>Instalador profissional distribuído via Inno Setup</li>
+        <li>Iniciativa própria, hoje adotada oficialmente pela empresa em substituição ao sistema legado</li>
+        <li>Base de mais de 2.400 escolas migrada de planilha para banco de dados</li>
+        <li>Integração com EACE/SISOP, CRM cVortex e Omada (monitoramento de rede)</li>
+        <li>Kanban de chamados com indicadores de SLA e painel de detalhe de chamado</li>
+        <li>Dashboard de HelpDesk</li>
+        <li>Condução de auditoria de segurança de políticas de acesso ao banco (Supabase Auth/PostgreSQL) e correções</li>
+        <li>Em migração para infraestrutura própria self-hosted (Docker, múltiplos serviços)</li>
+        <li>Sozinho responsável por todo o desenvolvimento e manutenção</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="projeto-card reveal">
+    <div class="projeto-visual">
+      <div class="projeto-icon">🤖</div>
+    </div>
+    <div class="projeto-info">
+      <span class="projeto-tag">Automação / RPA</span>
+      <h3 class="projeto-titulo">RPA de Extração de Chamados</h3>
+      <p class="projeto-desc">
+        Robô que extrai automaticamente cerca de 275 mil chamados de um portal
+        de helpdesk e carrega os dados no Supabase, eliminando a coleta manual
+        de dados para relatórios e indicadores.
+      </p>
+      <div class="projeto-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">Playwright</span>
+        <span class="stack-tag">Supabase</span>
+      </div>
+      <ul class="projeto-features">
+        <li>Extração automatizada de cerca de 275 mil chamados de um portal de helpdesk</li>
+        <li>Carga dos dados extraídos diretamente no Supabase</li>
+        <li>Correção de bugs de parsing de HTML e de mapeamento incorreto de colunas</li>
+        <li>Parser em streaming para lidar com arquivos de mais de 200MB</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="projeto-card reveal">
+    <div class="projeto-visual">
+      <div class="projeto-icon">💬</div>
+    </div>
+    <div class="projeto-info">
+      <span class="projeto-tag">Bot / Telegram</span>
+      <h3 class="projeto-titulo">Bot de Telegram para Consulta de Chamados</h3>
+      <p class="projeto-desc">
+        Bot que permite consultar dados de chamados de helpdesk diretamente
+        pelo Telegram, sem precisar acessar o portal web.
+      </p>
+      <div class="projeto-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">python-telegram-bot</span>
+      </div>
+      <ul class="projeto-features">
+        <li>Lista de usuários autorizados (allowlist) para controle de acesso</li>
+        <li>Botões inline para consulta de detalhes do chamado</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="projeto-card reveal">
+    <div class="projeto-visual">
+      <div class="projeto-icon">📊</div>
+    </div>
+    <div class="projeto-info">
+      <span class="projeto-tag">Automação / Low-code</span>
+      <h3 class="projeto-titulo">Automação de Cronograma</h3>
+      <p class="projeto-desc">
+        Automação do processo de atualização diária de uma planilha de
+        controle de cronograma.
+      </p>
+      <div class="projeto-stack">
+        <span class="stack-tag">Power Automate</span>
+        <span class="stack-tag">Office Scripts</span>
+      </div>
+      <ul class="projeto-features">
+        <li>Atualização diária automatizada da planilha de controle de cronograma</li>
       </ul>
     </div>
   </div>
