@@ -641,6 +641,40 @@
 
   <div class="projeto-card reveal">
     <div class="projeto-visual">
+      <div class="projeto-icon">🍾</div>
+    </div>
+    <div class="projeto-info">
+      <span class="projeto-tag">Sistema de Gestão · Em Planejamento</span>
+      <h3 class="projeto-titulo">Adega ERP</h3>
+      <p class="projeto-desc">
+        Sistema completo de gestão para adega/bar — PDV, estoque, financeiro,
+        clientes, fornecedores, compras e relatórios gerenciais centralizados
+        em um único sistema, no espírito de um pequeno ERP. Arquitetura e
+        modelo de dados já definidos; implementação ainda não iniciada.
+      </p>
+      <div class="projeto-stack">
+        <span class="stack-tag">Next.js</span>
+        <span class="stack-tag">TypeScript</span>
+        <span class="stack-tag">Tailwind CSS</span>
+        <span class="stack-tag">shadcn/ui</span>
+        <span class="stack-tag">Recharts</span>
+        <span class="stack-tag">Supabase</span>
+        <span class="stack-tag">Vercel</span>
+      </div>
+      <ul class="projeto-features">
+        <li>PDV com baixa de estoque atômica via stored procedures, evitando condição de corrida em vendas simultâneas</li>
+        <li>Módulo financeiro completo: contas a pagar/receber e fluxo de caixa</li>
+        <li>RBAC com 4 papéis (administrador, gerente, caixa, funcionário), reforçado também via Row Level Security no Postgres</li>
+        <li>Auditoria completa via tabela audit_log alimentada por triggers de banco</li>
+        <li>Exclusão lógica (soft delete) em todas as tabelas de domínio</li>
+        <li>Busca, filtro, paginação e exportação (PDF/Excel/CSV) em todas as telas de listagem</li>
+        <li>Arquitetura em monólito modular, com um domínio isolado por módulo</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="projeto-card reveal">
+    <div class="projeto-visual">
       <div class="projeto-icon">🤖</div>
     </div>
     <div class="projeto-info">
@@ -704,6 +738,28 @@
       </div>
       <ul class="projeto-features">
         <li>Atualização diária automatizada da planilha de controle de cronograma</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="projeto-card reveal">
+    <div class="projeto-visual">
+      <div class="projeto-icon">🧭</div>
+    </div>
+    <div class="projeto-info">
+      <span class="projeto-tag">AI Career Agent · Conceito / Em Branding</span>
+      <h3 class="projeto-titulo">Atlas</h3>
+      <p class="projeto-desc">
+        Plataforma de inteligência para carreira que atua como AI Career Agent,
+        monitorando vagas, calculando compatibilidade e automatizando
+        candidaturas. Atualmente em fase de definição de identidade visual e
+        direção de produto.
+      </p>
+      <ul class="projeto-features">
+        <li>Monitoramento de vagas e cálculo automatizado de compatibilidade</li>
+        <li>Diferencial: matching híbrido — currículo tradicional para todos os públicos, com análise de repositórios reais do GitHub como camada extra para perfis tech</li>
+        <li>Foco inicial em vagas remotas internacionais para devs brasileiros</li>
+        <li>Visão de longo prazo: otimização de currículo, preparação para entrevistas e estatísticas de mercado</li>
       </ul>
     </div>
   </div>
