@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Currículo / CV — Victor Hugo Ferreira Dantas</title>
+<meta name="description" content="Currículo de Victor Hugo Ferreira Dantas em Português e Inglês, com visualização e download em PDF.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261028-2">
+<style>
+.cv-hero{min-height:auto;padding-top:150px;padding-bottom:54px}.cv-hero h1{font-size:clamp(44px,7vw,76px)}
+.cv-choice{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px;max-width:780px}.cv-option{appearance:none;text-align:left;padding:22px;border:1px solid var(--border);border-radius:11px;background:var(--surface);color:var(--text);cursor:pointer;transition:.2s;font:inherit}.cv-option:hover,.cv-option.active{border-color:var(--accent);transform:translateY(-2px)}.cv-option strong{display:block;font:700 20px var(--head);margin-bottom:6px}.cv-option span{display:block;color:var(--muted);font-size:12px}.cv-option.active span{color:var(--accent)}
+.cv-viewer-section{padding-top:30px;padding-bottom:110px}.cv-viewer-wrap{display:none}.cv-viewer-wrap.visible{display:block}.cv-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}.cv-current{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.cv-frame-shell{overflow:hidden;border:1px solid var(--border);border-radius:12px;background:var(--surface);min-height:760px}.cv-frame{display:block;width:100%;height:82vh;min-height:760px;border:0;background:#fff}.cv-downloads{display:flex;gap:10px;flex-wrap:wrap}.cv-note{color:var(--muted);font-size:11px;margin-top:12px}
+@media(max-width:800px){.cv-choice{grid-template-columns:1fr}.cv-frame-shell,.cv-frame{min-height:620px}.cv-frame{height:76vh}}
+@media(max-width:520px){.cv-hero{padding-top:120px}.cv-frame-shell,.cv-frame{min-height:520px}.cv-frame{height:70vh}.cv-toolbar{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<nav><a class="logo" href="index.html">VHD</a><ul class="navlinks"><li><a href="index.html#sobre">Sobre</a></li><li><a href="index.html#projetos">Projetos</a></li><li><a href="hughes-web.html">Hughes Web</a></li><li><a href="index.html#contato">Contato</a></li></ul></nav>
+<main id="conteudo">
+<section class="container hero cv-hero"><div class="eyebrow">Currículo · Resume</div><h1>Escolha como quer<br><span>visualizar meu CV.</span></h1><p>O conteúdo está disponível em Português e Inglês. Selecione o idioma para visualizar o PDF dentro do portfólio; depois você pode abrir em uma nova aba ou baixar a versão que preferir.</p><div class="cv-choice" role="group" aria-label="Escolher idioma do currículo"><button class="cv-option" type="button" data-lang="pt"><strong>Português</strong><span>Currículo completo em PT-BR</span></button><button class="cv-option" type="button" data-lang="en"><strong>English</strong><span>AI-Assisted Development / Project Operations</span></button></div></section>
+<section class="container cv-viewer-section"><div id="cvViewer" class="cv-viewer-wrap" aria-live="polite"><div class="cv-toolbar"><div><div class="eyebrow" style="margin-bottom:6px">Visualização</div><div id="cvCurrent" class="cv-current"></div></div><div class="cv-downloads"><a id="openCv" class="btn outline" href="#" target="_blank" rel="noopener noreferrer">Abrir em nova aba</a><a id="downloadPt" class="btn outline" href="#">Baixar Português</a><a class="btn outline" href="Victor_Hugo_Ferreira_Dantas_CV_EN.pdf" download="Victor_Hugo_Ferreira_Dantas_CV_EN.pdf">Download English</a></div></div><div class="cv-frame-shell"><iframe id="cvFrame" class="cv-frame" title="Visualizador do currículo de Victor Hugo Ferreira Dantas"></iframe></div><p class="cv-note">Caso o navegador não exiba PDFs incorporados, use “Abrir em nova aba” ou um dos botões de download.</p></div></section>
+</main>
+<footer><span>© 2026 Victor Hugo Ferreira Dantas</span><span>Currículo / CV</span></footer>
+<script>
+const cvs={pt:{file:'Victor_Hugo_Ferreira_Dantas_CV_PT.pdf',label:'Português · PT-BR'},en:{file:'Victor_Hugo_Ferreira_Dantas_CV_EN.pdf',label:'English · EN'}};
+const options=[...document.querySelectorAll('.cv-option')],viewer=document.getElementById('cvViewer'),current=document.getElementById('cvCurrent'),frame=document.getElementById('cvFrame'),openCv=document.getElementById('openCv'),downloadPt=document.getElementById('downloadPt');
+async function getPtPdfUrl(){return cvs.pt.file;}
+async function getCvUrl(lang){return lang==='pt'?getPtPdfUrl():cvs.en.file;}
+async function selectCv(lang,scroll=true){const cv=cvs[lang]||cvs.pt;options.forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));current.textContent=cv.label+' · carregando…';viewer.classList.add('visible');try{const src=await getCvUrl(lang);frame.src=src+'#view=FitH';openCv.href=src;current.textContent=cv.label;}catch(e){current.textContent='Não foi possível carregar o PDF. Use os botões de download ou tente novamente.';}const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState({},'',url);if(scroll)viewer.scrollIntoView({behavior:'smooth',block:'start'});}
+options.forEach(b=>b.addEventListener('click',()=>selectCv(b.dataset.lang)));
+downloadPt.addEventListener('click',async e=>{e.preventDefault();const href=await getPtPdfUrl();const a=document.createElement('a');a.href=href;a.download='Victor_Hugo_Ferreira_Dantas_CV_PT.pdf';document.body.appendChild(a);a.click();a.remove();});
+const initial=new URLSearchParams(location.search).get('lang');if(initial&&cvs[initial])selectCv(initial,false);
+</script>
+</body></html>
